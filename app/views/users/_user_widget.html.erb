@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <li><a href='<%=events_path%>'>My Events</a></li>
+  <li><a href='<%=new_event_path%>'>Add Event</a></li>
+  <li><a href="">Welcome <%= current_user.email %></a></li>
+  <li>
+  <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to 'Login', new_user_session_path %>
+  </li>
+  <li>
+  <%= link_to 'Register', new_user_registration_path %>
+  </li>
+<% end %>
+

@@ -1,0 +1,14 @@
+<div class="container">
+  <ul>
+    <% @events.each do |event|%>
+    <li>
+      <span><%= event.title %></span>
+      <span><%= event.date %></span>
+      <span><%= link_to 'Edit',edit_event_path(event) %> </span>
+      <span><%= link_to 'Destroy', event_path(event),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></span>
+    </li>
+    <% end %>
+  </ul>
+</div>
